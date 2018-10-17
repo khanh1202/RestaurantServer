@@ -41,6 +41,9 @@ public class ServerPoint extends Thread {
                 if (command.startsWith("UPDATE")) {
                     Main.notifyOtherPoints(this);
                 }
+                if (command.startsWith("QUIT")) {
+                    return;
+                }
             }
         } catch (IOException e) {
             System.out.println("Server died: " + e);
